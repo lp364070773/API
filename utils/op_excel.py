@@ -1,6 +1,7 @@
 import xlrd
  
-data = xlrd.open_workbook("../test_data/rs.xls")
+data = xlrd.open_workbook("./test_data/rs.xls")
+print(self.file_path)
 tables = data.sheets()[0]  # 获取表格数据对象
 print(tables.nrows) # 打印表格行数
 print(tables.cell_value(0,0))  # 打印excel表格数据，需要传递数据所在的坐标(x,y)
@@ -9,10 +10,11 @@ print("*"*50+"封装前后数据对比"+"*"*50)
  
  
 class operationExcel(object):
-    def __init__(self, file_path="../test_data/rs.xls", sheet_id=0):
+    def __init__(self, file_path="./test_data/rs.xls", sheet_id=0):
         self.file_path = file_path
         self.sheet_id = sheet_id
         self.data = self.get_data()
+        
  
     def get_data(self):
         data = xlrd.open_workbook(self.file_path)
@@ -32,3 +34,4 @@ if __name__ == '__main__':
     print(operationExcel().get_rows())
     print(operationExcel().get_cell_value())
     print(operationExcel().get_cell_value(0,1))
+  

@@ -1,6 +1,8 @@
 
+import json
+
 class operationJson(object):
-    def __init__(self, file_path="../test_data/login.json"):
+    def __init__(self, file_path="./test_data/login.json"):
         self.file_path = file_path
         self.data = self.get_data()
  
@@ -18,5 +20,5 @@ class operationJson(object):
  
 if __name__ == '__main__':
     print(operationJson().get_key_words())
-    print(operationJson().get_key_words("login"))
-    print(operationJson().get_key_words("login")['username'])
+    print(operationJson().get_key_words("logincode"))
+    print(operationJson().get_key_words("pwd"))
