@@ -9,17 +9,17 @@ class RunMain(object):
     def get_main(self, url, data=None, header=None):
         res = None
         if header is not None:
-            res = requests.get(url=url, data=data, headers=header).json()
+            res = requests.get(url=url, data=data, headers=header,verify=False).json()
         else:
-            res = requests.get(url=url, data=data).json()
+            res = requests.get(url=url, data=data,verify=False).json()
         return res
  
     def post_main(self, url, data, header=None):
         res = None
         if header is not None:
-            res = requests.post(url=url, data=data, headers=header).json()
+            res = requests.post(url=url, data=data, headers=header,verify=False).json()
         else:
-            res = requests.post(url=url, data=data).json()
+            res = requests.post(url=url, data=data,verify=False).json()
         return res
  
  
