@@ -1,12 +1,11 @@
 import xlrd
  
 data = xlrd.open_workbook("./test_data/rs.xls")
-print(self.file_path)
-tables = data.sheets()[0]  # 获取表格数据对象
-print(tables.nrows) # 打印表格行数
-print(tables.cell_value(0,0))  # 打印excel表格数据，需要传递数据所在的坐标(x,y)
-print(tables.cell_value(0,1))
-print("*"*50+"封装前后数据对比"+"*"*50)
+# tables = data.sheets()[0]  # 获取表格数据对象
+# print(tables.nrows) # 打印表格行数
+# print(tables.cell_value(0,0))  # 打印excel表格数据，需要传递数据所在的坐标(x,y)
+# print(tables.cell_value(0,1))
+# print("*"*50+"封装前后数据对比"+"*"*50)
  
  
 class operationExcel(object):
