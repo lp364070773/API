@@ -2,7 +2,7 @@
 import requests,urllib3
 from urllib3.exceptions import InsecureRequestWarning
 #禁用安全请求警告
- urllib3.disable_warnings(InsecureRequestWarning)
+urllib3.disable_warnings(InsecureRequestWarning)
  
 class RunMain(object):
  

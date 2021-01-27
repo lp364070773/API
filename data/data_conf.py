@@ -1,16 +1,16 @@
 class global_var:
-    id = '0'  # id
-    module = '1'  # 模块
-    url = '2'  # url
-    run = '3'  # 是否运行
-    request_type = '4'  # 请求类型
-    request_header = '5'  # 是否携带header
-    case_depend = '6'  # case依赖
-    response_data_depend = '7'  # 依赖的返回数据
-    data_depend = '8'  #  数据依赖
-    request_data = '9'  # 请求数据
-    expect_result = '10'  # 预期结果
-    reality_result = '11'  # 实际结果
+    id = 0  # id
+    module = 1  # 模块
+    url = 2  # url
+    run = 3  # 是否运行
+    request_type = 4 # 请求类型
+    request_header = 5  # 是否携带header
+    case_depend = 6  # case依赖
+    response_data_depend = 7  # 依赖的返回数据
+    data_depend = 8  #  数据依赖
+    request_data = 9  # 请求数据
+    expect_result = 10  # 预期结果
+    reality_result = 11  # 实际结果
  
  
 def get_id():

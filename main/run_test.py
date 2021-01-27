@@ -1,3 +1,7 @@
+import os , sys
+
+sys.path.append(os.path.abspath(os.path.dirname(__file__)+'/'+'..'))
+
 from base.run_method import RunMain
 from data.data_get import getData
  
