@@ -1,3 +1,7 @@
+import os , sys
+
+sys.path.append(os.path.abspath(os.path.dirname(__file__)+'/'+'..'))
+
 from utils.op_excel import operationExcel
 from utils.op_json import operationJson
 from data import data_conf

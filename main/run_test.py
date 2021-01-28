@@ -14,9 +14,9 @@ class RunTest(object):
     def run(self):
         res = None
         row_counts = self.data.get_case_lines()  # 获取excel表格行数
-        # print(row_counts) 5
+        print(row_counts) 
         for row_count in range(1, row_counts):
-            # print(row_count) 1,2,3,4
+            print(row_count) 
             url = self.data.get_request_url(row_count)  # y行不变遍历获取x列的请求地址
             method = self.data.get_request_method(row_count)  # y行不变遍历获取x列的请求方式
             is_run = self.data.get_is_run(row_count)  # y行不变遍历获取x列的是否运行
