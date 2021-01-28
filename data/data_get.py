@@ -30,7 +30,12 @@ class getData(object):
         y = data_conf.get_request_header()
         header = self.op_excel.get_cell_value(x, y)
         if header == 'yes':
-            return data_conf.get_header_value()
+            y = data_conf.get_header()
+            print (y)
+            login_header = self.op_excel.get_cell_value(x, y)
+            login_header_values = op_json.get_header_value(login_header)
+            #这里有问题，data_conf中没有这个方法
+            return login_header_values
         else:
             return None
  
@@ -67,3 +72,9 @@ class getData(object):
         if expect_data == '':
             return None
         return expect_data
+    def get_login_header():
+        op_json = operationJson()
+        login_header = op_json.get_key_words(self.get_request_data(x))
+if __name__ == '__main__':
+     a= getData()
+     a.get_is_header(12)
