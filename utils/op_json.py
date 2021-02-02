@@ -18,6 +18,11 @@ class operationJson(object):
         else:
             return self.data
  
+    def get_header_value(self, key=None):
+        if key:
+            return self.data[key]
+        else:
+            return self.data
  
 if __name__ == '__main__':
     print(operationJson().get_key_words())

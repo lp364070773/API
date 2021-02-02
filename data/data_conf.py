@@ -11,6 +11,7 @@ class global_var:
     request_data = 9  # 请求数据
     expect_result = 10  # 预期结果
     reality_result = 11  # 实际结果
+    header = 12 #请求头
  
  
 def get_id():
@@ -48,3 +49,6 @@ def get_expect_result():
  
 def get_reality_result():
     return global_var.reality_result
+    
+def get_request_header():
+    return global_var.header
