@@ -49,5 +49,6 @@ def get_expect_result():
  
 def get_reality_result():
     return global_var.reality_result
+    
 def get_request_header():
     return global_var.header

@@ -9,6 +9,7 @@ from data import data_conf
 class getData(object):
     def __init__(self):
         self.op_excel = operationExcel()
+        self.op_json = operationJson()
  
     def get_case_lines(self):
         """获取表格行数"""
@@ -29,11 +30,10 @@ class getData(object):
         """是否携带header"""
         y = data_conf.get_request_header()
         header = self.op_excel.get_cell_value(x, y)
-        if header == 'yes':
-            y = data_conf.get_header()
-            print (y)
+        if header == 'header':
+            y = data_conf.get_request_header()
             login_header = self.op_excel.get_cell_value(x, y)
-            login_header_values = op_json.get_header_value(login_header)
+            login_header_values = self.op_json.get_header_value(login_header)
             #这里有问题，data_conf中没有这个方法
             return login_header_values
         else:
@@ -61,8 +61,8 @@ class getData(object):
  
     def get_data_for_json(self, x):
         """通过excel中的关键字去获取json数据"""
-        op_json = operationJson()
-        data = op_json.get_key_words(self.get_request_data(x))
+        
+        data = self.op_json.get_key_words(self.get_request_data(x))
         return data
  
     def get_expect_data(self, x):
@@ -72,9 +72,11 @@ class getData(object):
         if expect_data == '':
             return None
         return expect_data
+
     def get_login_header():
         op_json = operationJson()
         login_header = op_json.get_key_words(self.get_request_data(x))
+
 if __name__ == '__main__':
      a= getData()
-     a.get_is_header(12)
+     print(a.get_is_header(1))

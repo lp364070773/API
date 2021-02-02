@@ -1,4 +1,4 @@
-import xlrd
+import xlrd ,os
  
 data = xlrd.open_workbook("./test_data/rs.xls")
 # tables = data.sheets()[0]  # 获取表格数据对象
@@ -7,7 +7,7 @@ data = xlrd.open_workbook("./test_data/rs.xls")
 # print(tables.cell_value(0,1))
 # print("*"*50+"封装前后数据对比"+"*"*50)
  
- 
+# print(os.getcwd()) 
 class operationExcel(object):
     def __init__(self, file_path="./test_data/rs.xls", sheet_id=0):
         self.file_path = file_path
