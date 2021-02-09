@@ -1,4 +1,4 @@
-import os , sys
+﻿import os , sys , json ,requests
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)+'/'+'..'))
 
@@ -22,6 +22,7 @@ class RunTest(object):
             is_run = self.data.get_is_run(row_count)  # y行不变遍历获取x列的是否运行
             data = self.data.get_data_for_json(row_count)  # y行不变遍历获取x列的请求数据，这里面时三次调用，依次分别是get_data_for_json丶get_key_words丶get_request_data
             header = self.data.get_is_header(row_count)
+            
             print('url:', url)
             print('method:', method)
             print('is_run:', is_run)
@@ -30,8 +31,12 @@ class RunTest(object):
  
             if is_run:
                 res = self.runmain.run_main(url,method,data,header)
+                # print('type:',type(res))
+                
+                res_cookie = res[1]
+                res = res[0]
+                print(res_cookie) 
                 print("*"*60+"分割线"+"*"*60)
-        
         return res
  
  

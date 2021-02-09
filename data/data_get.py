@@ -73,6 +73,12 @@ class getData(object):
         if expect_data == '':
             return None
         return expect_data
+    
+    def get_module_name(self,x):
+        """获取模块名称"""
+        y = int(data_conf.get_module())
+        module_name = self.op_excel.get_cell_value(x,y)
+        return module_name
 
     def get_login_header():
         op_json = operationJson()
